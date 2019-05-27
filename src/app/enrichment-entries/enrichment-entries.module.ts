@@ -6,6 +6,7 @@ import { reducer } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { EnrichmentEntriesEffects } from './effects';
 import { EnrichmentEntriesRoutingModule } from './enrichment-entries-routing.module';
+import { NzTableModule, NzPageHeaderModule, NzIconModule } from 'ng-zorro-antd';
 
 
 @NgModule({
@@ -14,7 +15,10 @@ import { EnrichmentEntriesRoutingModule } from './enrichment-entries-routing.mod
     CommonModule,
     EnrichmentEntriesRoutingModule,
     StoreModule.forFeature('enrichment-entries', reducer),
-    EffectsModule.forFeature([ EnrichmentEntriesEffects ])
+    EffectsModule.forFeature([ EnrichmentEntriesEffects ]),
+    NzTableModule,
+    NzPageHeaderModule,
+    NzIconModule
   ]
 })
 export class EnrichmentEntriesModule { }

@@ -1,5 +1,5 @@
 export interface EnrichmentEntry {
-  key: string;
+  uuid: string;
   timestamp: number;
   user: string;
   value: string;

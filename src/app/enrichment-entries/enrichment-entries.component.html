@@ -1,7 +1,13 @@
-<table>
+<nz-page-header nzTitle="Enrichment: {{ selectedType }}"></nz-page-header>
+<nz-table [nzLoading]="loading$ | async">
   <thead>
     <tr>
-      <th>key</th>
+      <th
+        [nzShowCheckbox]="true"
+        [nzChecked]="allChecked"
+        (nzCheckedChange)="onCheckAllChange($event)"
+      ></th>
+      <th>uuid</th>
       <th>timestamp</th>
       <th>user</th>
       <th>value</th>
@@ -9,10 +15,15 @@
   </thead>
   <tbody>
     <tr *ngFor="let entry of entries$ | async">
-      <td>{{ entry.key }}</td>
+      <td
+        [nzShowCheckbox]="true"
+        [nzChecked]="!!checkedMap[entry.uuid]"
+        (nzCheckedChange)="onCheckChange($event, entry)"
+      ></td>
+      <td>{{ entry.uuid }}</td>
       <td>{{ entry.timestamp }}</td>
       <td>{{ entry.user }}</td>
       <td>{{ entry.value }}</td>
     </tr>
   </tbody>
-</table>
+</nz-table>

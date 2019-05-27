@@ -45,3 +45,8 @@ export const getEntryItems = createSelector(
   getEnrichmentEntriesState,
   (state: State) => state.items
 );
+
+export const isLoading = createSelector(
+  getEnrichmentEntriesState,
+  (state: State) => state.loading
+);

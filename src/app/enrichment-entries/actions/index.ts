@@ -7,6 +7,7 @@ export const LOAD_ENRICHMENT_ENTRIES_FAIL = '[Enrichment entries] load all fail'
 
 export class LoadEnrichmentEntriesAction implements Action {
   readonly type = LOAD_ENRICHMENT_ENTRIES;
+  constructor(public payload: string) {}
 }
 
 export class LoadEnrichmentEntriesSuccessAction implements Action {
