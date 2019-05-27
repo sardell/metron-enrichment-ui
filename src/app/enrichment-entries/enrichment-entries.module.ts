@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EnrichmentEntriesComponent } from './enrichment-entries.component';
-import { StoreModule } from '@ngrx/store';
-import { reducer } from './reducers';
+import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { EnrichmentEntriesEffects } from './effects';
 import { EnrichmentEntriesRoutingModule } from './enrichment-entries-routing.module';
+import { EnrichmentEntriesComponent } from './enrichment-entries.component';
+import { reducer } from './reducers';
 
 
 @NgModule({

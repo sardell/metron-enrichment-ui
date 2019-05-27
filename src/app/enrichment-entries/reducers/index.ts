@@ -1,6 +1,6 @@
-import { EnrichmentEntry } from '../models';
 import { createSelector } from '@ngrx/store';
 import * as fromActions from '../actions';
+import { EnrichmentEntry } from '../models';
 
 export interface State {
   loading: boolean;

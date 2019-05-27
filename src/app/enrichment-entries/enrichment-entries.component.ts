@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadEnrichmentEntriesAction } from './actions';
-import { Store, select } from '@ngrx/store';
-import { State, getEntryItems } from './reducers';
-import { EnrichmentEntry } from './models';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { LoadEnrichmentEntriesAction } from './actions';
+import { EnrichmentEntry } from './models';
+import { getEntryItems, State } from './reducers';
 
 @Component({
   selector: 'app-enrichment-entries',
