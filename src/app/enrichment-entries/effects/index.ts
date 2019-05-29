@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { switchMap, map, catchError } from 'rxjs/operators';
 import { Action } from '@ngrx/store';
 import * as fromActions from '../actions';
+import { EnrichmentEntriesService } from '../services/enrichment-entries.service';
+import { EnrichmentEntry } from '../models';
+import { NzMessageService } from 'ng-zorro-antd';
 
 @Injectable()
 export class EnrichmentEntriesEffects {
@@ -11,29 +14,23 @@ export class EnrichmentEntriesEffects {
   @Effect()
   loadAll$: Observable<Action> = this.actions$.pipe(
     ofType(fromActions.LOAD_ENRICHMENT_ENTRIES),
-    map((/*action: fromActions.EnrichmentEntriesAction*/) => {
-      /**
-       * @TODO it's just temporarily hard coded until we have
-       * a real data source up and running.
-       */
-      return new fromActions.LoadEnrichmentEntriesSuccessAction([{
-        uuid: '123',
-        timestamp: 123,
-        user: 'bob',
-        value: 'lorem'
-      }, {
-        uuid: '456',
-        timestamp: 456,
-        user: 'simon',
-        value: 'ipsum'
-      }, {
-        uuid: '678',
-        timestamp: 678,
-        user: 'john',
-        value: 'lorem'
-      }]);
+    switchMap((action: fromActions.EnrichmentEntriesAction) => {
+      return this.service.getAllByType(action.payload)
+        .pipe(
+          map((entries: EnrichmentEntry[]) => {
+            return new fromActions.LoadEnrichmentEntriesSuccessAction(entries);
+          }),
+          catchError((error: any) => {
+            this.messageService.create('error', error.message);
+            return of(new fromActions.LoadEnrichmentEntriesFailAction(error));
+          })
+        );
     })
   );
 
-  constructor(private actions$: Actions) {}
+  constructor(
+    private actions$: Actions,
+    private service: EnrichmentEntriesService,
+    private messageService: NzMessageService
+  ) {}
 }

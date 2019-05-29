@@ -5,11 +5,13 @@ import * as fromActions from '../actions';
 export interface State {
   loading: boolean;
   items: EnrichmentEntry[];
+  error: string;
 }
 
 const initialState: State = {
   loading: false,
-  items: []
+  items: [],
+  error: ''
 };
 
 export function reducer(state: State = initialState, action: fromActions.EnrichmentEntriesAction): State {
@@ -30,6 +32,7 @@ export function reducer(state: State = initialState, action: fromActions.Enrichm
     case fromActions.LOAD_ENRICHMENT_ENTRIES_FAIL: {
       return {
         ...state,
+        error: action.payload.message,
         loading: false,
       };
     }

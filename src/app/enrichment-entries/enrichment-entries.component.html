@@ -1,5 +1,8 @@
 <nz-page-header nzTitle="Enrichment: {{ selectedType }}"></nz-page-header>
-<nz-table [nzLoading]="loading$ | async">
+<nz-table
+  [nzLoading]="loading$ | async"
+  [nzData]="entries$ | async"
+>
   <thead>
     <tr>
       <th

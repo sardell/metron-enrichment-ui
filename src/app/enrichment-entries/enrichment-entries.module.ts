@@ -6,11 +6,16 @@ import { reducer } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { EnrichmentEntriesEffects } from './effects';
 import { EnrichmentEntriesRoutingModule } from './enrichment-entries-routing.module';
-import { NzTableModule, NzPageHeaderModule, NzIconModule } from 'ng-zorro-antd';
+import { NzTableModule, NzPageHeaderModule, NzIconModule, NzMessageService } from 'ng-zorro-antd';
+import { EnrichmentEntriesService } from './services/enrichment-entries.service';
 
 
 @NgModule({
   declarations: [EnrichmentEntriesComponent],
+  providers: [
+    EnrichmentEntriesService,
+    NzMessageService
+  ],
   imports: [
     CommonModule,
     EnrichmentEntriesRoutingModule,
