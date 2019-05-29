@@ -1,0 +1,10 @@
+<nz-input-group [nzSuffix]="suffixTemplate" data-qe-id="enrichment-type-filter-container">
+  <input #filterTypeInput type="text" nz-input [(ngModel)]="inputValue" placeholder="Search for Enrichment Types"
+    data-qe-id="enrichment-type-filter-input" />
+</nz-input-group>
+<ng-template #suffixTemplate><i nz-icon nz-tooltip class="ant-input-clear-icon" nzTheme="fill" nzType="close-circle"
+    *ngIf="inputValue" (click)="clearFilter()"></i></ng-template>
+
+<ul *ngFor="let type of filteredTypes">
+  <li>{{ type }}</li>
+</ul>
