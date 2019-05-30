@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NzInputModule, NgZorroAntdModule } from 'ng-zorro-antd';
-
-import { EnrichmentTypesRoutingModule } from './enrichment-types.routing';
-import { EnrichmentTypesListComponent } from './enrichment-types-list/enrichment-types-list.component';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgZorroAntdModule, NzInputModule } from 'ng-zorro-antd';
+
+import { EnrichmentTypesListComponent } from './enrichment-types-list/enrichment-types-list.component';
+import { EnrichmentTypesRoutingModule } from './enrichment-types.routing';
 
 
 @NgModule({

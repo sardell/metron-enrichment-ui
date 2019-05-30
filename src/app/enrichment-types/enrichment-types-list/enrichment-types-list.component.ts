@@ -1,9 +1,8 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
-// import { NzInputModule } from 'ng-zorro-antd';
-
-import { EnrichmentTypesService } from '../enrichment-types.service';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+
+import { EnrichmentTypesService } from '../enrichment-types.service';
 
 @Component({
   selector: 'app-enrichment-types-list',

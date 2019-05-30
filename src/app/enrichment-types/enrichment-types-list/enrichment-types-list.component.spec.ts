@@ -1,18 +1,19 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {
   async,
   ComponentFixture,
+  fakeAsync,
   TestBed,
-  tick,
-  fakeAsync
+  tick
 } from '@angular/core/testing';
-import { NzInputModule, NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { By } from '@angular/platform-browser';
+import { NgZorroAntdModule, NzInputModule } from 'ng-zorro-antd';
 import { of } from 'rxjs';
 
-import { EnrichmentTypesListComponent } from './enrichment-types-list.component';
 import { EnrichmentTypesService } from '../enrichment-types.service';
+
+import { EnrichmentTypesListComponent } from './enrichment-types-list.component';
 
 class FakeEnrichmentTypesService {
   getAvailableEnrichments() {

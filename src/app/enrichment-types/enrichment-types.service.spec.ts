@@ -1,8 +1,8 @@
-import { TestBed, getTestBed } from '@angular/core/testing';
 import {
   HttpClientTestingModule,
   HttpTestingController
 } from '@angular/common/http/testing';
+import { getTestBed, TestBed } from '@angular/core/testing';
 
 import { EnrichmentTypesService } from './enrichment-types.service';
 
