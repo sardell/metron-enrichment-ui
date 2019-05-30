@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+
 import { EnrichmentEntry } from '../models';
 
 export const LOAD_ENRICHMENT_ENTRIES = '[Enrichment entries] load all start';

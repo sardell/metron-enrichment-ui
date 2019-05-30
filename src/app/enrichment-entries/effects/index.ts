@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Effect, Actions, ofType } from '@ngrx/effects';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Action } from '@ngrx/store';
+
 import { LOAD_ENRICHMENT_ENTRIES, LoadEnrichmentEntriesSuccessAction } from '../actions';
 
 @Injectable()
