@@ -1,5 +1,6 @@
 import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NzLayoutModule } from 'ng-zorro-antd';
 
 import { AppComponent } from './app.component';
 
@@ -7,7 +8,8 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        NzLayoutModule
       ],
       declarations: [
         AppComponent

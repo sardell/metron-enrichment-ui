@@ -3,6 +3,7 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing';
 import { getTestBed, TestBed } from '@angular/core/testing';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { EnrichmentTypesService } from './enrichment-types.service';
 
@@ -14,7 +15,7 @@ const FAKE_ENRICHMENT_TYPES_MOCK = ['enrichment1', 'enrichment2'];
 describe('EnrichmentTypesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule, NgZorroAntdModule]
     });
     injector = getTestBed();
     enrichmentTypesService = injector.get(EnrichmentTypesService);
