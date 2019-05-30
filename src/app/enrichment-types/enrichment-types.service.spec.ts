@@ -10,7 +10,7 @@ import { EnrichmentTypesService } from './enrichment-types.service';
 let mockBackend: HttpTestingController;
 let injector: TestBed;
 let enrichmentTypesService: EnrichmentTypesService;
-const FAKE_ENRICHMENT_TYPES_MOCK = ['enrichment1', 'enrichment2'];
+const enrichmentTypesMockResponse = ['enrichment1', 'enrichment2'];
 
 describe('EnrichmentTypesService', () => {
   beforeEach(() => {
@@ -29,7 +29,7 @@ describe('EnrichmentTypesService', () => {
 
   describe('getAvailableEnrichments()', () => {
     it('should return an Observable<string[]>', () => {
-      const responseMock: string[] = FAKE_ENRICHMENT_TYPES_MOCK;
+      const responseMock: string[] = enrichmentTypesMockResponse;
       let response;
 
       enrichmentTypesService.getAvailableEnrichments().subscribe(r => {
