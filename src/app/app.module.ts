@@ -10,7 +10,7 @@ import * as AllIcons from '@ant-design/icons-angular/icons';
 import { EffectsModule } from '@ngrx/effects';
 import { MetaReducer, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { en_US, NgZorroAntdModule, NZ_I18N, NZ_ICONS } from 'ng-zorro-antd';
+import { en_US, NgZorroAntdModule, NZ_I18N, NZ_ICONS, NzLayoutModule } from 'ng-zorro-antd';
 import { storeFreeze } from 'ngrx-store-freeze';
 
 import { environment } from '../environments/environment';
@@ -37,17 +37,17 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    EnrichmentTypesModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, { metaReducers }),
-    StoreDevtoolsModule.instrument(),
     NgZorroAntdModule,
+    NzLayoutModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot({}, { metaReducers }),
     StoreDevtoolsModule.instrument(),
-    EnrichmentEntriesModule
+    EffectsModule.forRoot([]),
+    EnrichmentEntriesModule,
+    EnrichmentTypesModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

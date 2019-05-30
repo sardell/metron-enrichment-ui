@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { NzGridModule } from 'ng-zorro-antd';
 
 import { EnrichmentTypesModule } from '../enrichment-types/enrichment-types.module';
 
@@ -17,6 +18,7 @@ import { reducer } from './reducers';
     CommonModule,
     EnrichmentEntriesRoutingModule,
     EnrichmentTypesModule,
+    NzGridModule,
     StoreModule.forFeature('enrichment-entries', reducer),
     EffectsModule.forFeature([ EnrichmentEntriesEffects ])
   ]
