@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '',  redirectTo: '/enrichments/types', pathMatch: 'full'},
+  { path: '',  redirectTo: '/enrichment-entries', pathMatch: 'full'},
 ];
 
 @NgModule({

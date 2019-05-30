@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EnrichmentEntriesComponent } from './enrichment-entries.component';
 
 const routes: Routes = [
+  { path: 'enrichment-entries', component: EnrichmentEntriesComponent },
   { path: 'enrichment-entries/:type', component: EnrichmentEntriesComponent }
 ];
 

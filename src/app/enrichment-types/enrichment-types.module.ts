@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { NgZorroAntdModule, NzInputModule } from 'ng-zorro-antd';
 
 import { EnrichmentTypesListComponent } from './enrichment-types-list/enrichment-types-list.component';
-import { EnrichmentTypesRoutingModule } from './enrichment-types.routing';
-
 
 @NgModule({
   declarations: [EnrichmentTypesListComponent],
@@ -14,7 +12,7 @@ import { EnrichmentTypesRoutingModule } from './enrichment-types.routing';
     CommonModule,
     FormsModule,
     NzInputModule,
-    EnrichmentTypesRoutingModule
-  ]
+  ],
+  exports: [EnrichmentTypesListComponent]
 })
 export class EnrichmentTypesModule { }
