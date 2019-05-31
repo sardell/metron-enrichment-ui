@@ -5,12 +5,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IconDefinition } from '@ant-design/icons-angular';
-import * as AllIcons from '@ant-design/icons-angular/icons';
 import { EffectsModule } from '@ngrx/effects';
 import { MetaReducer, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { en_US, NgZorroAntdModule, NZ_I18N, NZ_ICONS, NzLayoutModule } from 'ng-zorro-antd';
+import { en_US, NgZorroAntdModule, NZ_I18N, NzLayoutModule } from 'ng-zorro-antd';
 import { storeFreeze } from 'ngrx-store-freeze';
 
 import { environment } from '../environments/environment';
@@ -25,13 +23,6 @@ registerLocaleData(en);
 export const metaReducers: MetaReducer<{}>[] = !environment.production
   ? [storeFreeze]
   : [];
-
-const antDesignIcons = AllIcons as {
-  [key: string]: IconDefinition;
-};
-const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
-  key => antDesignIcons[key]
-);
 
 @NgModule({
   declarations: [AppComponent],
@@ -51,7 +42,6 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
-    { provide: NZ_ICONS, useValue: icons }
   ],
   bootstrap: [AppComponent]
 })
